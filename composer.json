@@ -1,0 +1,47 @@
+{
+    "name": "blendcraft/recaptcha",
+    "description": "A simple craft plugin for validating Google's reCAPTCHA v3",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "recaptcha"
+    ],
+    "support": {
+        "source": "https://gitlab.com/blendcraft/craft-recaptcha",
+        "docs": "https://gitlab.com/blendcraft/craft-recaptcha",
+        "issues": "https://gitlab.com/blendcraft/craft-recaptcha/issues",
+        "support": "andrews@gamesbykyle.com"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kyle Andrews",
+            "homepage": "http://www.gamesbykyle.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://gitlab.com/blendcraft/craft-recaptcha.git"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "blendcraft\\recaptcha\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "reCAPTCHA v3 for Craft",
+        "handle": "recaptcha",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://gitlab.com/blendcraft/craft-recaptcha/blob/master/CHANGELOG.md",
+        "class": "blendcraft\\recaptcha\\Recaptcha"
+    }
+}

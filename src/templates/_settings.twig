@@ -1,0 +1,21 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Public Key",
+    required:     true,
+    id:           'publicKey',
+    name:         'publicKey',
+    instructions: "Enter your reCAPTCHA v3 site key.",
+    value:        settings.publicKey,
+    autofocus:    true,
+}) }}
+
+{{ forms.textField({
+    label:        "Private Key",
+    required:     true,
+    id:           'privateKey',
+    name:         'privateKey',
+    instructions: "Enter your reCAPTCHA v3 secret Key",
+    value:        settings.privateKey,
+}) }}
