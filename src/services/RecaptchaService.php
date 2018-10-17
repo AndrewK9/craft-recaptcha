@@ -51,7 +51,8 @@ class RecaptchaService extends Component
         }
         else if(strlen($key) == 0)
         {
-            if(strlen($token) == 0){
+            if(strlen($token) == 0)
+            {
                 $responseMessage['status'] = 500;
                 $responseMessage['message'] = 'Missing recaptcha key';
                 return $responseMessage;
@@ -72,13 +73,13 @@ class RecaptchaService extends Component
             $responseMessage['status'] = 200;
             $responseMessage['timestamp'] = $result['challenge_ts'];
 
-            // Using same API as v2 but 'aciton' is new to v3
-            // so we need to make sure it's set before adding it
+            // 'aciton' is new to v3 so we need to make sure it exist
             if(!empty($result['action']))
             {
                 $responseMessage['action'] = $result['action'];
             }
 
+            // 'score' is new to v3 so we need to make sure it exist
             if(!empty($result['score']))
             {
                 $responseMessage['score'] = $result['score'];
