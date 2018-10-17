@@ -13,7 +13,7 @@ namespace codewithkyle\recaptcha\services;
 use codewithkyle\recaptcha\Recaptcha;
 
 use Craft;
-use craft\web\Component;
+use craft\base\Component;
 use GuzzleHttp\Client;
 
 /**
@@ -64,9 +64,10 @@ class RecaptchaService extends Component
                 'response' => $token
             ]
         ]);
-        $result = json_decode($validation, TRUE);
 
-        if($result['success'] == 1)
+        $result = json_decode($response->getBody(), true);
+
+        if($result['success'] == true)
         {
             $responseMessage['status'] = 200;
             $responseMessage['score'] = $result['score'];
