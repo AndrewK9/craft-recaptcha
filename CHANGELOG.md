@@ -1,3 +1,11 @@
+# 1.1.0 - 2018-10-17
+
+- Adds: Switched to Guzzle for verifying site key and token
+- Fixes: Rewrites verify controller to use custom service
+- Fixes: No longer requires v3 (checks if score is empty before getting it)
+- Fixes: Updates plugin to new namespace
+- Fixes: Updates `README.md` to provide better documentation
+
 # 1.0.5 - 2018-08-03
 
 - Fixes: Rewrites readme.md to show how to use the plugin from install to verifying actions and score

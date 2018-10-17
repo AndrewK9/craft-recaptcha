@@ -70,7 +70,6 @@ class RecaptchaService extends Component
         if($result['success'] == true)
         {
             $responseMessage['status'] = 200;
-            $responseMessage['score'] = $result['score'];
             $responseMessage['timestamp'] = $result['challenge_ts'];
 
             // Using same API as v2 but 'aciton' is new to v3
@@ -78,6 +77,11 @@ class RecaptchaService extends Component
             if(!empty($result['action']))
             {
                 $responseMessage['action'] = $result['action'];
+            }
+
+            if(!empty($result['score']))
+            {
+                $responseMessage['score'] = $result['score'];
             }
 
             return $responseMessage;
