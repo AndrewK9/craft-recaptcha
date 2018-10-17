@@ -58,7 +58,7 @@ class RecaptchaService extends Component
             }
         }
 
-        $response = $client->request('GET', 'https://www.google.com/recaptcha/api/siteverify', [
+        $response = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
             'query' => [
                 'secret' => $key,
                 'response' => $token
