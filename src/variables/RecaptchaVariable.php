@@ -4,7 +4,7 @@
  *
  * A simple craft plugin for validating Google's Invisible reCAPTCHA v2
  *
- * @link      http://www.gamesbykyle.com
+ * @link      http://www.codewithkyle.com
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 

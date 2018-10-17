@@ -5,7 +5,7 @@
  *
  * @author    Kyle Andrews
  * @copyright Copyright (c) 2018 Kyle Andrews
- * @link      http://www.gamesbykyle.com
+ * @link      http://www.codewithkyle.com
  * @package   Recaptcha
  * @since     1.0.0
  */

@@ -2,9 +2,9 @@
 /**
  * recaptcha plugin for Craft CMS 3.x
  *
- * A simple craft plugin for validating Google's Invisible reCAPTCHA v2
+ * A simple craft plugin for validating Google's reCAPTCHA v3
  *
- * @link      http://www.gamesbykyle.com
+ * @link      http://www.codewithkyle.com
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 

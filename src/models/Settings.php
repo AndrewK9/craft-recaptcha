@@ -4,7 +4,7 @@
  *
  * This plugin will force a 'Row Settings' block into a Dynamic Content Area matrix setup.
  *
- * @link      http://www.gamesbykyle.com
+ * @link      http://www.codewithkyle.com
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
