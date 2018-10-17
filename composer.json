@@ -1,5 +1,5 @@
 {
-    "name": "blendcraft/recaptcha",
+    "name": "codewithkyle/recaptcha",
     "description": "A simple craft plugin for validating Google's reCAPTCHA v3",
     "type": "craft-plugin",
     "keywords": [
@@ -10,22 +10,22 @@
         "recaptcha"
     ],
     "support": {
-        "source": "https://gitlab.com/blendcraft/craft-recaptcha",
-        "docs": "https://gitlab.com/blendcraft/craft-recaptcha",
-        "issues": "https://gitlab.com/blendcraft/craft-recaptcha/issues",
-        "support": "andrews@gamesbykyle.com"
+        "source": "https://github.com/codewithkyle/craft-recaptcha",
+        "docs": "https://github.com/codewithkyle/craft-recaptcha",
+        "issues": "https://github.com/codewithkyle/craft-recaptcha/issues",
+        "support": "kylea@page.works"
     },
     "license": "MIT",
     "authors": [
         {
             "name": "Kyle Andrews",
-            "homepage": "http://www.gamesbykyle.com"
+            "homepage": "http://devkyle.com"
         }
     ],
     "repositories": [
         {
             "type": "git",
-            "url": "https://gitlab.com/blendcraft/craft-recaptcha.git"
+            "url": "https://github.com/codewithkyle/craft-recaptcha.git"
         }
     ],
     "require": {
@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-          "blendcraft\\recaptcha\\": "src/"
+          "codewithkyle\\recaptcha\\": "src/"
         }
     },
     "extra": {
@@ -41,7 +41,7 @@
         "handle": "recaptcha",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "https://gitlab.com/blendcraft/craft-recaptcha/blob/master/CHANGELOG.md",
-        "class": "blendcraft\\recaptcha\\Recaptcha"
+        "changelogUrl": "https://github.com/codewithkyle/craft-recaptcha/blob/master/CHANGELOG.md",
+        "class": "codewithkyle\\recaptcha\\Recaptcha"
     }
 }

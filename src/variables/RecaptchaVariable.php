@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
-namespace blendcraft\recaptcha\variables;
+namespace codewithkyle\recaptcha\variables;
 
-use blendcraft\recaptcha\Recaptcha;
+use codewithkyle\recaptcha\Recaptcha;
 
 use Craft;
 
@@ -41,7 +41,7 @@ class RecaptchaVariable
      */
     public function getPublicKey()
     {
-        $key = \blendcraft\recaptcha\Recaptcha::getInstance()->settings->publicKey;
+        $key = Recaptcha::getInstance()->settings->publicKey;
         return $key;
     }
 }

@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
-namespace blendcraft\recaptcha\controllers;
+namespace codewithkyle\recaptcha\controllers;
 
-use blendcraft\recaptcha\Recaptcha;
+use codewithkyle\recaptcha\Recaptcha;
 
 use Craft;
 use craft\web\Controller;

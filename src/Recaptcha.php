@@ -8,10 +8,10 @@
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
-namespace blendcraft\recaptcha;
+namespace codewithkyle\recaptcha;
 
-use blendcraft\recaptcha\variables\RecaptchaVariable;
-use blendcraft\recaptcha\models\Settings;
+use codewithkyle\recaptcha\variables\RecaptchaVariable;
+use codewithkyle\recaptcha\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -85,17 +85,17 @@ class Recaptcha extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        // Register our site routes
-        Event::on(
-            UrlManager::class,
-            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
-            function (RegisterUrlRulesEvent $event) {
-                $event->rules[] = [
-                    'pattern' => '/recaptcha/verify',
-                    'route' => 'recaptcha/verify/verify-token'
-                ];
-            }
-        );
+        // // Register our site routes
+        // Event::on(
+        //     UrlManager::class,
+        //     UrlManager::EVENT_REGISTER_SITE_URL_RULES,
+        //     function (RegisterUrlRulesEvent $event) {
+        //         $event->rules[] = [
+        //             'pattern' => '/recaptcha/verify',
+        //             'route' => 'recaptcha/verify/verify-token'
+        //         ];
+        //     }
+        // );
 
         // Register our variables
         Event::on(

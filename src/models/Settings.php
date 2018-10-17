@@ -8,11 +8,11 @@
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
-namespace blendcraft\recaptcha\models;
+namespace codewithkyle\recaptcha\models;
 
-use blendcraft\recaptcha\Recaptcha;
-// use blendcraft\recaptcha\variables\RecaptchaVariable;
-// use blendcraft\recaptcha\models\Settings;
+use codewithkyle\recaptcha\Recaptcha;
+// use codewithkyle\recaptcha\variables\RecaptchaVariable;
+// use codewithkyle\recaptcha\models\Settings;
 
 use Craft;
 use craft\base\Model;

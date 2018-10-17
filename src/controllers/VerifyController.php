@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
-namespace blendcraft\recaptcha\controllers;
+namespace codewithkyle\recaptcha\controllers;
 
-use blendcraft\recaptcha\Recaptcha;
+use codewithkyle\recaptcha\Recaptcha;
 
 use Craft;
 use craft\web\Controller;
@@ -64,44 +64,17 @@ class VerifyController extends Controller
 
         $request    = Craft::$app->getRequest();
         $token      = $request->getRequiredBodyParam('token');
-        $key        = \blendcraft\recaptcha\Recaptcha::getInstance()->settings->privateKey;
+        $key        = Recaptcha::getInstance()->settings->privateKey;
 
-        $validation = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$key&response=$token");
-        $result = json_decode($validation, TRUE);
+        $response = Recaptcha::getInstance()->recaptchaService->verify($token, $key);
 
-        $userMessage = array();
-
-        if(strlen($token) == 0){
-            $userMessage['status'] = 0;
-            $userMessage['message'] = 'Missing recaptcha token param';
-            return json_encode($userMessage);
+        if($response['status'] != 200)
+        {
+            return json_encode($response);    
         }
-
-        if($result['success'] == 1) {
-            $userMessage['status'] = 1;
-            $userMessage['score'] = $result['score'];
-            $userMessage['timestamp'] = $result['challenge_ts'];
-
-            // Using same API as v2 but 'aciton' is new to v3
-            // so we need to make sure it's set before adding it
-            if(!empty($result['action'])){
-                $userMessage['action'] = $result['action'];
-            }
-
-            return json_encode($userMessage);
-        } 
-        else{
-            $userMessage['status'] = 0;
-            if(strlen($key) == 0){
-                $userMessage['message'] = 'You\'re missing your reCAPTCHA secret key';
-            }
-            else{
-                $userMessage['message'] = 'reCAPTCHA couldn\'t verify this user';
-                if(!empty($result['error-codes'])){
-                    $userMessage['error-codes'] = $result['error-codes'];
-                }
-            }
-            return json_encode($userMessage);
+        else
+        {
+            $this->run('/contact-form/send');
         }
     }
 }

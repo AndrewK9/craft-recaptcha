@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2018 Kyle Andrews
  */
 
-namespace blendcraft\recaptcha\assetbundles\Recaptcha;
+namespace codewithkyle\recaptcha\assetbundles\Recaptcha;
 
 use Craft;
 use craft\web\AssetBundle;
@@ -43,7 +43,7 @@ class RecaptchaAsset extends AssetBundle
     public function init()
     {
         // define the path that your publishable resources live
-        $this->sourcePath = "@blendcraft/recaptcha/assetbundles/recaptcha/dist";
+        $this->sourcePath = "@codewithkyle/recaptcha/assetbundles/recaptcha/dist";
 
         // define the dependencies
         $this->depends = [
