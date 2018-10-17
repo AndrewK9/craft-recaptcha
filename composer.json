@@ -42,6 +42,9 @@
         "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "https://github.com/codewithkyle/craft-recaptcha/blob/master/CHANGELOG.md",
+        "components": {
+            "recaptchaService": "codewithkyle\\recaptcha\\services\\RecaptchaService"
+        },
         "class": "codewithkyle\\recaptcha\\Recaptcha"
     }
 }

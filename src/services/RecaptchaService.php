@@ -41,6 +41,22 @@ class RecaptchaService extends Component
     public function verify($token, $key)
     {
         $client = new Client();
+        $responseMessage = array();
+
+        if(strlen($token) == 0)
+        {
+            $responseMessage['status'] = 500;
+            $responseMessage['message'] = 'Missing recaptcha token';
+            return $responseMessage;
+        }
+        else if(strlen($key) == 0)
+        {
+            if(strlen($token) == 0){
+                $responseMessage['status'] = 500;
+                $responseMessage['message'] = 'Missing recaptcha key';
+                return $responseMessage;
+            }
+        }
 
         $response = $client->request('GET', 'https://www.google.com/recaptcha/api/siteverify', [
             'query' => [
@@ -50,35 +66,33 @@ class RecaptchaService extends Component
         ]);
         $result = json_decode($validation, TRUE);
 
-        $responseMessage = array();
-
-        if(strlen($token) == 0){
-            $responseMessage['status'] = 500;
-            $responseMessage['message'] = 'Missing recaptcha token param';
-            return $responseMessage;
-        }
-
-        if($result['success'] == 1) {
+        if($result['success'] == 1)
+        {
             $responseMessage['status'] = 200;
             $responseMessage['score'] = $result['score'];
             $responseMessage['timestamp'] = $result['challenge_ts'];
 
             // Using same API as v2 but 'aciton' is new to v3
             // so we need to make sure it's set before adding it
-            if(!empty($result['action'])){
+            if(!empty($result['action']))
+            {
                 $responseMessage['action'] = $result['action'];
             }
 
             return $responseMessage;
         } 
-        else{
+        else
+        {
             $responseMessage['status'] = 500;
-            if(strlen($key) == 0){
+            if(strlen($key) == 0)
+            {
                 $responseMessage['message'] = 'You\'re missing your reCAPTCHA secret key';
             }
-            else{
+            else
+            {
                 $responseMessage['message'] = 'reCAPTCHA couldn\'t verify this user';
-                if(!empty($result['error-codes'])){
+                if(!empty($result['error-codes']))
+                {
                     $responseMessage['error-codes'] = $result['error-codes'];
                 }
             }

@@ -64,17 +64,10 @@ class VerifyController extends Controller
 
         $request    = Craft::$app->getRequest();
         $token      = $request->getRequiredBodyParam('token');
-        $key        = Recaptcha::getInstance()->settings->privateKey;
+        $key        = Recaptcha::$plugin->settings->privateKey;
 
-        $response = Recaptcha::getInstance()->recaptchaService->verify($token, $key);
+        $response   = Recaptcha::$plugin->recaptchaService->verify($token, $key);
 
-        if($response['status'] != 200)
-        {
-            return json_encode($response);    
-        }
-        else
-        {
-            $this->run('/contact-form/send');
-        }
+        return json_encode($response);
     }
 }
