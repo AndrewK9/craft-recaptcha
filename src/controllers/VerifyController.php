@@ -68,6 +68,13 @@ class VerifyController extends Controller
 
         $response   = Recaptcha::$plugin->recaptchaService->verify($token, $key);
 
-        return json_encode($response);
+        if($response['status'] == 200)
+        {
+            return $this->run('/contact-form/send');
+        }
+        else
+        {
+            return json_encode($response);
+        }
     }
 }

@@ -20,12 +20,12 @@ Go to Settings -> Plugins -> reCAPTCHA for Craft -> Settings. Paste your site an
 ## Using recaptcha
 
 1. Build your form element [eg: form](docs/form-sample.md)
-1. Add your site key to the `<form>` element with `data-key="{{ craft.recaptcha.getPublicKey() }}"` and the CSRF token `data-csrf-token="{{ craft.app.reqeust.csrfToken }}"`
+1. Add your site key to the `<form>` element with `data-key="{{ craft.recaptcha.getPublicKey() }}"`
 1. In JavaScript we need the following variables:
   - `form = document.body.querySelector('form');`
-  - `var csrfToken = form.getAttribute('data-csrf-token');'`
   - `var key = form.getAttribute('data-key');`
 1. Get Googles reCAPTCHA API with `<script src="https://www.google.com/recaptcha/api.js?render={{ craft.recaptcha.getPublicKey }}"></script>`
+  - Or get the API when you need it [sample code](docs/get-api.md)
 1. Execute `grecaptcha.execute` whenever users submit the form [sample code](docs/verification.md)
 1. Based on the response do what you need to do
 
